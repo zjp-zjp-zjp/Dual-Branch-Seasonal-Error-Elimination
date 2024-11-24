@@ -708,12 +708,6 @@ def calculate_metrics(predictions, targets,swau=False):
 
     precision = true_positives / (true_positives + false_positives + 1e-10)  # 防止分母为零
     recall = true_positives / (true_positives + false_negatives + 1e-10)  # 防止分母为零
-    if swau:
-        recall=recall+0.25
-        precision=precision+0.35
-    else:
-        recall=recall+0.25
-        precision=precision+0.3
 
     f1_score = 2 * precision * recall / (precision + recall + 1e-10)  # 防止分母为零
 
